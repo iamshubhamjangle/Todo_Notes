@@ -9,21 +9,6 @@
     android:layout_height="100dp">
 
     <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_width="40dp"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:text="1"
-            android:layout_marginTop="19dp"
-            android:textSize="32sp"
-            android:textColor="#000C5D"
-            android:id="@+id/todo_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout
         android:layout_marginLeft="16dp"
         android:orientation="vertical"
         android:layout_width="205dp"
@@ -32,7 +17,7 @@
         <TextView
             android:id="@+id/todo_title"
             android:layout_marginTop="19dp"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="#000C5D"
             android:text="Buy whiskas"
             android:layout_width="wrap_content"
@@ -40,7 +25,7 @@
 
         <TextView
             android:id="@+id/todo_desc"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textColor="#ADADAD"
             android:layout_marginTop="8dp"
             android:text="Nearly market good to"
@@ -51,7 +36,7 @@
 
     <LinearLayout
         android:layout_marginTop="30dp"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
@@ -62,7 +47,7 @@
             android:gravity="right"
             android:text="Tomorrow"
             android:textColor="#F63EA5"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
 </LinearLayout>
