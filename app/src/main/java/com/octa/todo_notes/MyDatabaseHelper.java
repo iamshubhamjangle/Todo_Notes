@@ -32,7 +32,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
                 " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_TITLE + " TEXT, " +
                 COLUMN_DESC + " TEXT, " +
-                COLUMN_DAY + " INTEGER);";
+                COLUMN_DAY + " TEXT);";
         db.execSQL(query);
     }
     @Override
@@ -41,13 +41,13 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addBook(String title, String author, int pages){
+    void addBook(String title, String desc, String date){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-
         cv.put(COLUMN_TITLE, title);
-        cv.put(COLUMN_DESC, author);
-        cv.put(COLUMN_DAY, pages);
+        cv.put(COLUMN_DESC, desc);
+        cv.put(COLUMN_DAY, date);
+
         long result = db.insert(TABLE_NAME,null, cv);
         if(result == -1){
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();

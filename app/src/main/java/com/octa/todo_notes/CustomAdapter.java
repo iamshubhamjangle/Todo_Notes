@@ -23,14 +23,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private Activity activity;
     private ArrayList todo_id, todo_title, todo_desc, todo_day;
 
-    CustomAdapter(Activity activity, Context context, ArrayList book_id, ArrayList book_title, ArrayList book_author,
-                  ArrayList book_pages){
+    CustomAdapter(Activity activity, Context context, ArrayList todo_id, ArrayList todo_title, ArrayList todo_description, ArrayList todo_day){
         this.activity = activity;
         this.context = context;
-        this.todo_id = book_id;
-        this.todo_title = book_title;
-        this.todo_desc = book_author;
-        this.todo_day = book_pages;
+        this.todo_id = todo_id;
+        this.todo_title = todo_title;
+        this.todo_desc = todo_description;
+        this.todo_day = todo_day;
     }
 
     @NonNull
@@ -76,7 +75,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            //book_id_txt = itemView.findViewById(R.id.book_id_txt);
+            book_id_txt = itemView.findViewById(R.id.todo_id);
             book_title_txt = itemView.findViewById(R.id.todo_title);
             book_author_txt = itemView.findViewById(R.id.todo_desc);
             book_pages_txt = itemView.findViewById(R.id.todo_date);
