@@ -41,7 +41,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addBook(String title, String desc, String date){
+    void addtodo(String title, String desc, String date){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_TITLE, title);
@@ -80,7 +80,6 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         }else {
             Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     void deleteOneRow(String row_id){

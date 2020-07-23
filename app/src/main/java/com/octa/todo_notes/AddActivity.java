@@ -26,7 +26,7 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MyDatabaseHelper myDB = new MyDatabaseHelper(AddActivity.this);
-                myDB.addBook(title_input.getText().toString().trim(),
+                myDB.addtodo(title_input.getText().toString().trim(),
                         desc_input.getText().toString().trim(),
                         date_input.getText().toString().trim());
             }

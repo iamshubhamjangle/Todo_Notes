@@ -63,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        this.onCreate(null);
+//    }
+
     void storeDataInArrays(){
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount() == 0){

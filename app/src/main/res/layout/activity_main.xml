@@ -39,7 +39,7 @@
                 android:fontFamily="@font/ml"
                 android:text="@string/subtitlepage"
                 android:textAlignment="center"
-                android:textColor="#4A4E6A"
+                android:textColor="#FFF"
                 android:textSize="18sp" />
 
             <View
@@ -51,12 +51,12 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_marginTop="-60dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:id="@+id/recyclerView"
+                android:layout_marginTop="-60dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
         </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
