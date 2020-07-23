@@ -43,7 +43,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
-        holder.book_id_txt.setText(String.valueOf(todo_id.get(position)));
         holder.book_title_txt.setText(String.valueOf(todo_title.get(position)));
         holder.book_author_txt.setText(String.valueOf(todo_desc.get(position)));
         holder.book_pages_txt.setText(String.valueOf(todo_day.get(position)));
@@ -65,17 +64,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return todo_id.size();
+        return todo_title.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView book_id_txt, book_title_txt, book_author_txt, book_pages_txt;
+        TextView book_title_txt, book_author_txt, book_pages_txt;
         LinearLayout mainLayout;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            book_id_txt = itemView.findViewById(R.id.todo_id);
             book_title_txt = itemView.findViewById(R.id.todo_title);
             book_author_txt = itemView.findViewById(R.id.todo_desc);
             book_pages_txt = itemView.findViewById(R.id.todo_date);
