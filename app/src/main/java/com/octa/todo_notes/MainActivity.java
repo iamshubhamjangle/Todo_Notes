@@ -13,13 +13,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    //FloatingActionButton add_button;
-    Button add_button;
+    FloatingActionButton add_button;
     TextView no_data;
 
     MyDatabaseHelper myDB;
