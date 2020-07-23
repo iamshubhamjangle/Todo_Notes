@@ -12,15 +12,17 @@
         <activity
             android:name=".UpdateActivity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme" />
+
         <activity
             android:name=".AddActivity"
-            android:label="ADD To-do"
+            android:theme="@style/AppTheme"
+            android:label="New Todo"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

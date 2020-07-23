@@ -1,7 +1,7 @@
 package com.octa.todo_notes;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +29,10 @@ public class AddActivity extends AppCompatActivity {
                 myDB.addtodo(title_input.getText().toString().trim(),
                         desc_input.getText().toString().trim(),
                         date_input.getText().toString().trim());
+                MainActivity.fa.finish();
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
     }

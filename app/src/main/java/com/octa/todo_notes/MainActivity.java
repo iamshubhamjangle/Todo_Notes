@@ -9,8 +9,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,17 +19,16 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton add_button;
-    TextView no_data;
-
     MyDatabaseHelper myDB;
     ArrayList<String> todo_id, todo_title, todo_desc, todo_day;
     CustomAdapter customAdapter;
+    public static MainActivity fa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        fa = this; //used to finish this activity when moving to other activity
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.add_button);
         add_button.setOnClickListener(new View.OnClickListener() {
@@ -63,17 +60,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        this.onCreate(null);
-//    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     void storeDataInArrays(){
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount() == 0){
-            //empty_imageview.setVisibility(View.VISIBLE);
-            //no_data.setVisibility(View.VISIBLE);
             Toast.makeText(this, "No data..", Toast.LENGTH_SHORT).show();
         }else{
             while (cursor.moveToNext()){
@@ -82,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 todo_desc.add(cursor.getString(2));
                 todo_day.add(cursor.getString(3));
             }
-            //empty_imageview.setVisibility(View.GONE);
-            //no_data.setVisibility(View.GONE);
         }
     }
 }
