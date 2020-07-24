@@ -9,11 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -69,9 +69,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-
         TextView book_title_txt, book_author_txt, book_pages_txt;
-        LinearLayout mainLayout;
+        ConstraintLayout mainLayout;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);

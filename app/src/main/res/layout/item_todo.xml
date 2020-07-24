@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mainLayout"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginBottom="15dp"
     android:background="#FFF"
-    android:orientation="horizontal"
-    android:layout_marginBottom="20dp"
-    android:layout_height="100dp">
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_marginLeft="16dp"
+
+    <TextView
+        android:id="@+id/todo_title"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/mm"
+        android:text="@string/dummy_todo_title"
+        android:textColor="#000C5D"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/todo_date"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/todo_date"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/ml"
+        android:gravity="center_vertical"
+        android:text="@string/dummy_due_date"
+        android:textColor="#F63EA5"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/todo_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/todo_desc"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="7dp"
+        android:fontFamily="@font/ml"
+        android:text="@string/dummy_desc_text"
+        android:textColor="#ADADAD"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/todo_title" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_width="205dp"
-        android:layout_height="match_parent">
+        app:layout_constraintGuide_percent="0.03" />
 
-        <TextView
-            android:id="@+id/todo_title"
-            android:layout_marginTop="19dp"
-            android:textSize="20sp"
-            android:textColor="#000C5D"
-            android:text="Buy whiskas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
 
-        <TextView
-            android:id="@+id/todo_desc"
-            android:textSize="16sp"
-            android:textColor="#ADADAD"
-            android:layout_marginTop="8dp"
-            android:text="Nearly market good to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/todo_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="right"
-            android:text="Tomorrow"
-            android:textColor="#F63EA5"
-            android:textSize="14sp" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,4 +12,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="dummy_desc_text">Buy a wisky from market in mumbai, this wisky should be the most expensive wisky in the shop</string>
+    <string name="dummy_todo_title">Buy whiskas and all the vegetable required.</string>
+    <string name="dummy_due_date">Tomorrow</string>
 </resources>
