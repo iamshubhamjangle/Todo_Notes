@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp">
@@ -18,7 +19,9 @@
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints=""
+        android:importantForAutofill="no"/>
 
     <EditText
         android:id="@+id/desc_update"
@@ -26,63 +29,95 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/et_desc"
         android:gravity="top|left"
+        android:hint="@string/et_desc"
         android:inputType="textMultiLine"
         android:lines="8"
-        android:minLines="5"
         android:maxLines="10"
+        android:minLines="5"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_update" />
+        app:layout_constraintTop_toBottomOf="@+id/title_update"
+        android:autofillHints=""
+        android:importantForAutofill="no"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
-        android:id="@+id/day_update"
-        android:background="#EFEFEF"
+        android:id="@+id/textViewSelectDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="@string/textView_Date_picker"
-        android:gravity="center"
-        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_update" />
+
+    <TextView
+        android:id="@+id/tv_date_picker_update"
         android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="39dp"
+        android:background="#EFEFEF"
         android:ems="10"
+        android:gravity="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/update_button"
         app:layout_constraintEnd_toStartOf="@+id/imageViewDatePickerUpdate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_update" />
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectDateTime" />
 
     <ImageView
         android:id="@+id/imageViewDatePickerUpdate"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_date_picker"
-        android:padding="5dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="2dp"
         android:layout_marginBottom="39dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_date_picker"
+        app:layout_constraintBottom_toTopOf="@+id/update_button"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewTimePickerUpdate"
+        app:layout_constraintStart_toEndOf="@+id/tv_date_picker_update"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectDateTime"
+        android:contentDescription="@string/contentDesc" />
+
+    <ImageView
+        android:id="@+id/imageViewTimePickerUpdate"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="39dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_time_picker"
         app:layout_constraintBottom_toTopOf="@+id/update_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_update" />
+        app:layout_constraintStart_toEndOf="@+id/imageViewDatePickerUpdate"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectDateTime"
+        android:contentDescription="@string/contentDesc" />
 
     <Button
         android:id="@+id/update_button"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/btn_height"
         android:layout_marginTop="40dp"
         android:text="@string/btn_update"
+        android:textColor="@color/white"
+        android:background="@drawable/button_bg"
         android:textSize="20sp"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/day_update" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_date_picker_update" />
 
     <Button
         android:id="@+id/delete_button"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/btn_height"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_bg"
         android:text="@string/btn_delete"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"

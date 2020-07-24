@@ -5,14 +5,14 @@
     <string name="titlepage">My TO-DO</string>
     <string name="title_activity_update">Update Todo</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="dummy_desc_text">Buy a wisky from market in mumbai, this wisky should be the most expensive wisky in the shop</string>
     <string name="dummy_todo_title">Buy whiskas and all the vegetable required.</string>
     <string name="dummy_due_date">Tomorrow</string>
-    <string name="textView_Date_picker">Select a Due Date/Time</string>
+    <string name="textView_Date_picker">Select a Due Date &amp; Time</string>
     <string name="btn_delete">Delete</string>
     <string name="btn_update">Update</string>
     <string name="et_title">Todo Title</string>
     <string name="et_desc">Description</string>
+    <string name="contentDesc">TODO</string>
+    <string name="btn_add">Add</string>
 </resources>

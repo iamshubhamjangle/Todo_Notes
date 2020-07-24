@@ -20,10 +20,12 @@
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints=""
+        android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/author_input"
+        android:id="@+id/desc_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -37,7 +39,21 @@
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_input" />
+        app:layout_constraintTop_toBottomOf="@+id/title_input"
+        android:autofillHints=""
+        android:importantForAutofill="no"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/textViewSelectDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/textView_Date_picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/desc_input" />
 
     <TextView
         android:id="@+id/tv_date_picker"
@@ -48,13 +64,12 @@
         android:background="#EFEFEF"
         android:ems="10"
         android:gravity="center"
-        android:text="@string/textView_Date_picker"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintEnd_toStartOf="@+id/imageViewDatePicker"
         app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/author_input" />
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectDateTime" />
 
     <ImageView
         android:id="@+id/imageViewDatePicker"
@@ -67,7 +82,8 @@
         app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintEnd_toStartOf="@+id/imageViewTimePicker"
         app:layout_constraintStart_toEndOf="@+id/tv_date_picker"
-        app:layout_constraintTop_toBottomOf="@+id/author_input" />
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectDateTime"
+        android:contentDescription="@string/contentDesc" />
 
     <ImageView
         android:id="@+id/imageViewTimePicker"
@@ -80,16 +96,19 @@
         app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageViewDatePicker"
-        app:layout_constraintTop_toBottomOf="@+id/author_input" />
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectDateTime"
+        android:contentDescription="@string/contentDesc" />
 
     <Button
         android:id="@+id/add_button"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/btn_height"
         android:layout_marginTop="40dp"
-        android:text="Add"
-        android:textSize="20sp"
+        android:background="@drawable/button_bg"
+        android:text="@string/btn_add"
+        android:textColor="@color/white"
         android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewDatePicker" />
