@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:layout_marginBottom="15dp"
-    android:background="#FFF"
+    android:background= "@drawable/recycleview_background"
     android:orientation="vertical">
 
 
@@ -31,7 +31,7 @@
         android:layout_height="23dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/ml"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|end"
         android:text="@string/dummy_due_date"
         android:textColor="#F63EA5"
         android:textSize="14sp"
@@ -47,7 +47,7 @@
         android:fontFamily="@font/ml"
         android:text="@string/dummy_desc_text"
         android:textColor="#ADADAD"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/todo_title" />
