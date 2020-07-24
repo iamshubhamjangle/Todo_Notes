@@ -2,6 +2,7 @@ package com.octa.todo_notes;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
@@ -49,6 +50,12 @@ public class UpdateActivity extends AppCompatActivity {
                 desc = desc_input.getText().toString().trim();
                 day = day_input.getText().toString().trim();
                 myDB.updateData(id, title, desc, day);
+
+                //to close current activity and open mainactivity
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
             }
         });
 
