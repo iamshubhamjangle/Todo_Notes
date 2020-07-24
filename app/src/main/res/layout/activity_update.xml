@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Todo Title"
+        android:hint="@string/et_title"
         android:inputType="text"
         android:lines="2"
         android:minLines="2"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Description"
+        android:hint="@string/et_desc"
         android:gravity="top|left"
         android:inputType="textMultiLine"
         android:lines="8"
@@ -37,16 +37,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_update" />
 
-    <EditText
+    <TextView
         android:id="@+id/day_update"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="#EFEFEF"
+        android:text="@string/textView_Date_picker"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="39dp"
         android:ems="10"
-        android:hint="Enter a Due Date"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/update_button"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewDatePickerUpdate"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_update" />
+
+    <ImageView
+        android:id="@+id/imageViewDatePickerUpdate"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_date_picker"
+        android:padding="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="39dp"
+        app:layout_constraintBottom_toTopOf="@+id/update_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desc_update" />
 
     <Button
@@ -54,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="40dp"
-        android:text="Update"
+        android:text="@string/btn_update"
         android:textSize="20sp"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
-        android:text="Delete"
+        android:text="@string/btn_delete"
         android:textSize="20sp"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"

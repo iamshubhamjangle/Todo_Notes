@@ -1,21 +1,27 @@
 package com.octa.todo_notes;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.Calendar;
 
+import static java.lang.String.format;
+
 public class AddActivity extends AppCompatActivity {
 
-    EditText title_input, desc_input;
-    TextView tv_date_picker;
-    ImageView date_picker;
-    Button add_button;
+    private EditText title_input, desc_input;
+    private TextView tv_date_picker;
+    private ImageView date_picker;
+    private Button add_button;
+    private int mYear, mMonth, mDay, mHour, mMinute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +33,11 @@ public class AddActivity extends AppCompatActivity {
         tv_date_picker = findViewById(R.id.tv_date_picker);
         add_button = findViewById(R.id.add_button);
         date_picker = findViewById(R.id.imageViewDatePicker);
-        final Calendar myCalendar = Calendar.getInstance();
 
         date_picker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                onDatePickerClick();
             }
         });
 
@@ -42,7 +47,26 @@ public class AddActivity extends AppCompatActivity {
                 onAddButtonClick();
             }
         });
+
     }
+
+
+    private void onDatePickerClick() {
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        tv_date_picker.setText(format("%d-%d-%d", dayOfMonth, monthOfYear + 1, year));
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
+    }
+
 
     private void onAddButtonClick() {
         MyDatabaseHelper myDB = new MyDatabaseHelper(AddActivity.this);
