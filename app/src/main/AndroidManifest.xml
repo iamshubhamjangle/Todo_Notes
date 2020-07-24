@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".UpdateActivity"
-            android:label="@string/title_activity_main2"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_update"
             android:theme="@style/AppTheme" />
 
         <activity
