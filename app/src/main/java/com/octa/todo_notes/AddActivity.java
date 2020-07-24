@@ -2,6 +2,7 @@ package com.octa.todo_notes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -22,10 +23,6 @@ public class AddActivity extends AppCompatActivity {
 
     private EditText title_input, desc_input;
     private TextView tv_date_picker;
-    private ImageView date_picker;
-    private ImageView time_picker;
-    private Button add_button;
-    private int mYear, mMonth, mDay, mHour, mMinute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +30,11 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add);
 
         title_input = findViewById(R.id.title_input);
-        desc_input = findViewById(R.id.author_input);
+        desc_input = findViewById(R.id.desc_input);
         tv_date_picker = findViewById(R.id.tv_date_picker);
-        add_button = findViewById(R.id.add_button);
-        date_picker = findViewById(R.id.imageViewDatePicker);
-        time_picker = findViewById(R.id.imageViewTimePicker);
+        Button add_button = findViewById(R.id.add_button);
+        ImageView date_picker = findViewById(R.id.imageViewDatePicker);
+        ImageView time_picker = findViewById(R.id.imageViewTimePicker);
 
         date_picker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +60,8 @@ public class AddActivity extends AppCompatActivity {
     private void onTimePickerClick() {
         // Get Current Time
         final Calendar c = Calendar.getInstance();
-        mHour = c.get(Calendar.HOUR_OF_DAY);
-        mMinute = c.get(Calendar.MINUTE);
+        int mHour = c.get(Calendar.HOUR_OF_DAY);
+        int mMinute = c.get(Calendar.MINUTE);
 
         // Launch Time Picker Dialog
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
@@ -80,12 +77,13 @@ public class AddActivity extends AppCompatActivity {
 
     private void onDatePickerClick() {
         final Calendar c = Calendar.getInstance();
-        mYear = c.get(Calendar.YEAR);
-        mMonth = c.get(Calendar.MONTH);
-        mDay = c.get(Calendar.DAY_OF_MONTH);
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH);
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                 new DatePickerDialog.OnDateSetListener() {
+                    @SuppressLint("DefaultLocale")
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         tv_date_picker.setText(format("%d-%d-%d", dayOfMonth, monthOfYear + 1, year));
