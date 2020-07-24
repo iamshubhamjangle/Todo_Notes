@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -23,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> todo_id, todo_title, todo_desc, todo_day;
     CustomAdapter customAdapter;
     public static MainActivity fa;
+    private boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fa = this; //used to finish this activity when moving to other activity
+
+        //used to finish this activity when moving to other activity,
+        //this help when user does not add any task and press back the activity remains in same state in background
+        fa = this;
+
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.add_button);
         add_button.setOnClickListener(new View.OnClickListener() {
@@ -77,5 +83,25 @@ public class MainActivity extends AppCompatActivity {
                 todo_day.add(cursor.getString(3));
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        //Exit only when back button is pressed twice
+        if (doubleBackToExitPressedOnce) {   //if true exit the activity
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }
