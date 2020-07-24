@@ -10,5 +10,9 @@
     <string name="dummy_desc_text">Buy a wisky from market in mumbai, this wisky should be the most expensive wisky in the shop</string>
     <string name="dummy_todo_title">Buy whiskas and all the vegetable required.</string>
     <string name="dummy_due_date">Tomorrow</string>
-    <string name="textView_Date_picker">Select a Date</string>
+    <string name="textView_Date_picker">Select a Due Date</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_update">Update</string>
+    <string name="et_title">Todo Title</string>
+    <string name="et_desc">Description</string>
 </resources>
