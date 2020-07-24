@@ -3,6 +3,7 @@ package com.octa.todo_notes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.TimePicker;
+
 import java.util.Calendar;
 
 import static java.lang.String.format;
@@ -20,6 +23,7 @@ public class AddActivity extends AppCompatActivity {
     private EditText title_input, desc_input;
     private TextView tv_date_picker;
     private ImageView date_picker;
+    private ImageView time_picker;
     private Button add_button;
     private int mYear, mMonth, mDay, mHour, mMinute;
 
@@ -33,6 +37,7 @@ public class AddActivity extends AppCompatActivity {
         tv_date_picker = findViewById(R.id.tv_date_picker);
         add_button = findViewById(R.id.add_button);
         date_picker = findViewById(R.id.imageViewDatePicker);
+        time_picker = findViewById(R.id.imageViewTimePicker);
 
         date_picker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +45,12 @@ public class AddActivity extends AppCompatActivity {
                 onDatePickerClick();
             }
         });
-
+        time_picker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onTimePickerClick();
+            }
+        });
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,6 +58,23 @@ public class AddActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void onTimePickerClick() {
+        // Get Current Time
+        final Calendar c = Calendar.getInstance();
+        mHour = c.get(Calendar.HOUR_OF_DAY);
+        mMinute = c.get(Calendar.MINUTE);
+
+        // Launch Time Picker Dialog
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        tv_date_picker.append(" " + hourOfDay + ":" + minute);
+                    }
+                }, mHour, mMinute, false);
+        timePickerDialog.show();
     }
 
 

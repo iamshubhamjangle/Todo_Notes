@@ -41,17 +41,18 @@
 
     <TextView
         android:id="@+id/tv_date_picker"
-        android:background="#EFEFEF"
-        android:text="@string/textView_Date_picker"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="47dp"
+        android:layout_width="212dp"
+        android:layout_height="54dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="39dp"
+        android:background="#EFEFEF"
         android:ems="10"
+        android:gravity="center"
+        android:text="@string/textView_Date_picker"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintEnd_toStartOf="@+id/imageViewDatePicker"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/author_input" />
 
@@ -59,12 +60,26 @@
         android:id="@+id/imageViewDatePicker"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_date_picker"
-        android:padding="5dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="39dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_date_picker"
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewTimePicker"
+        app:layout_constraintStart_toEndOf="@+id/tv_date_picker"
+        app:layout_constraintTop_toBottomOf="@+id/author_input" />
+
+    <ImageView
+        android:id="@+id/imageViewTimePicker"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="39dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_time_picker"
         app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewDatePicker"
         app:layout_constraintTop_toBottomOf="@+id/author_input" />
 
     <Button
