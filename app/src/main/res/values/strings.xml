@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Todo - Notes</string>
     <string name="subtitlepage">Finish Them Quickly</string>
-    <string name="endpage">No more todo\'s \nMade by shubham jangle</string>
+    <string name="endpage">No more todo\'s\n\nMade by shubham jangle</string>
     <string name="titlepage">My TO-DO</string>
     <string name="title_activity_update">Update Todo</string>
 
